@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Today Status</title>
+    <link rel="stylesheet" href="new.component.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="header">
+            <h1>Today Status</h1>
+
+            <div class="summary-cards">
+                <div class="card">
+                    <h2>Live Headcount</h2>
+                    <p id="live-headcount">0</p>
+                </div>
+                <div class="card">
+                    <h2>Total Check In</h2>
+                    <p id="total-checkin">134</p>
+                </div>
+                <div class="card">
+                    <h2>Total Check Out</h2>
+                    <p id="total-checkout">36</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-grid">
+            <div class="status-card">
+                <h2>Present</h2>
+                <p id="present-count">12</p>
+            </div>
+            <div class="status-card">
+                <h2>Absent</h2>
+                <p id="absent-count">20</p>
+            </div>
+            <div class="status-card">
+                <h2>Late Arrival</h2>
+                <p id="late-arrival">0</p>
+            </div>
+            <div class="status-card">
+                <h2>Early Leave</h2>
+                <p id="early-leave">0</p>
+            </div>
+            <div class="status-card">
+                <h2>Missed Punch</h2>
+                <p id="missed-punch">0</p>
+            </div>
+            <div class="status-card">
+                <h2>Half Day</h2>
+                <p id="half-day">0</p>
+            </div>
+            <div class="status-card">
+                <h2>Over Time</h2>
+                <p id="over-time">0</p>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-card">
+                <h2>Employee Strength</h2>
+                <canvas id="employee-chart"></canvas> 
+                <div class="status-filters">
+                    <button class="status-button active">Active</button>
+                    <button class="status-button">Present</button>
+                    <button class="status-button">Absent</button>
+                    <button class="status-button">Late</button>
+                    <button class="status-button">Early</button>
+                    <button class="status-button">MP</button>
+                    <button class="status-button">HD</button>
+                    <button class="status-button">OT</button>
+                    <button class="status-button">Leave</button>
+                    <button class="status-button">OD</button>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h2>Leave & On-Duty</h2>
+                <canvas id="leave-chart"></canvas> 
+            </div>
+         <div class="employee-list">
+            <h2>Employee Details</h2>
+            <div class="employee-info">
+                <div class="employee">
+                    <img src="placeholder.png" alt="Employee Photo"> 
+                    <span class="employee-name">CHANDAN CHETRI</span><br>
+                    <span class="employee-id">Emp Id: 466</span><br>
+                    <span class="leave-count">4.836.00</span> 
+                </div>
+                <div class="employee">
+                    <img src="placeholder.png" alt="Employee Photo"> 
+                    <span class="employee-name">PANCHANGAM NAVEEN KUMAR</span><br>
+                    <span class="employee-id">Emp Id: 115</span><br>
+                    <span class="leave-count">60</span> 
+                </div>
+                <div class="employee">
+                    <img src="placeholder.png" alt="Employee Photo"> 
+                    <span class="employee-name">ANIL KUMAR G</span><br>
+                    <span class="employee-id">Emp Id: 1</span><br>
+                    <span class="leave-count">...</span> 
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    <script src="script.js"></script>
+    <script>
+        // Sample Data (Replace with your actual data fetching)
+const employeeData = [
+    { name: "CHANDAN CHETRI", id: 466, leave: 4.99 },
+    { name: "PANCHANGAM NAVEEN KUMAR", id: 115, leave: 60 },
+    { name: "ANIL KUMAR G", id: 1, leave: 0 },
+];
+
+// Update Summary Counts (Replace with actual data)
+document.getElementById("live-headcount").textContent = 0;
+document.getElementById("total-checkin").textContent = 134;
+document.getElementById("total-checkout").textContent = 36;
+document.getElementById("present-count").textContent = 12;
+document.getElementById("absent-count").textContent = 20;
+document.getElementById("late-arrival").textContent = 0;
+document.getElementById("early-leave").textContent = 0;
+document.getElementById("missed-punch").textContent = 0;
+document.getElementById("half-day").textContent = 0;
+document.getElementById("over-time").textContent = 0;
+
+// Employee Strength Chart (Bar Chart)
+const employeeChartCanvas = document.getElementById("employee-chart").getContext("2d");
+new Chart(employeeChartCanvas, {
+    type: "bar",
+    data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"], // Replace with your data
+        datasets: [{
+            label: "Employees",
+            data: [300, 400, 450, 350, 250, 400], // Replace with your data
+            backgroundColor: "#007bff",
+        }],
+    },
+});
+
+// Leave & On-Duty Chart (Doughnut Chart)
+const leaveChartCanvas = document.getElementById("leave-chart").getContext("2d");
+new Chart(leaveChartCanvas, {
+    type: "doughnut",
+    data: {
+        labels: ["EL", "CL", "SL", "Medical", "LOP", "OD"], // Replace with your data
+        datasets: [{
+            data: [60, 30, 10, 5, 15, 20], // Replace with your data
+            backgroundColor: [
+                "#f0ad4e", "#5bc0de", "#d9534f", "#5cb85c", "#f0ad4e", "#5bc0de",
+            ],
+        }],
+    },
+});
+
+// Employee List
+const employeeList = document.getElementById("employee-details-list");
+employeeData.forEach(employee => {
+    const listItem = document.createElement("li");
+    
+    employeeList.appendChild(listItem);
+});
+    </script>
+</body>
+</html>

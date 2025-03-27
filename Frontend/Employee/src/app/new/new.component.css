@@ -1,0 +1,134 @@
+body {
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Prevents chart overflow */
+}
+
+.header {
+    
+    color: rgb(8, 6, 12);
+    padding: 20px;
+    text-align: center;
+}
+
+.summary-cards {
+    font-size: xx-large;
+   
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.card {
+    font-size: xx-large;
+   
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.status-grid {
+    height: 100%;
+    width: 100%;
+   
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+.status-card {
+    height: 300px;
+    width: 300px;
+   
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.charts-container {
+    height: 50%;
+    width: 50%;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 400px;
+}
+
+.chart-card {
+   
+    margin-top: 200px;
+    margin-left: 300px;
+    flex: 1; /* Equal width for charts */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+
+
+.employee-list {
+    margin-top: 200px;
+    margin-left: 200px;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.employee-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.employee-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+.canvas{
+    height: 500px;
+    width: 500px; 
+}
+.status-filters {
+    width: 50px;
+    padding: 20px;
+    background-color: #eee;
+    border-right: 1px solid #ddd;
+}
+.employee-info {
+    margin-bottom: 20px;
+}
+
+.employee {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.employee img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make the image circular */
+    margin-right: 10px;
+}

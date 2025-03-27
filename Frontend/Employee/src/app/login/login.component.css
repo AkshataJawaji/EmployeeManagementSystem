@@ -1,0 +1,146 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f6f9fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 10px 4px 12px rgba(51, 3, 225, 0.1);
+    padding: 20px;
+    width: 340px;
+    text-align: center;
+    border-top: 2px solid #5116db;
+    position: relative;
+   
+    
+}
+
+.logo {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.logo h1 {
+    font-weight: bold;
+    font-size: 38px;
+    color: #333;
+}
+.form-section img{
+    margin-top: 10px;
+    height: 80px;
+}
+.form-section h2{
+    margin-top: 10px;
+    
+}
+
+    
+
+.digital {
+    color: #225fc7;
+}
+
+.i {
+    color: #333;
+}
+
+.subtext {
+    font-size: 10px;
+    color: #666;
+}
+
+h2 {
+    margin-top: -110px;
+    margin: 40px 0 10px;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.signin-text {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    width: 200px;
+    margin-left: 50px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #6666ff;
+}
+
+/* Small Dark Blue Sign In Button */
+.signin-btn {
+    width: 100px;
+    background-color: #003366;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 10px auto;
+}
+
+.signin-btn:hover {
+    background-color: #002244;
+}
+
+.signup-text {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.signup-text a {
+    color: #6666ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}

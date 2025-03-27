@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Status Dashboard</title>
+    <link rel="stylesheet" href="employee-details.component.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="header">
+            <h1></h1>
+            <div class="summary-cards">
+                <div class="card">
+                    <h2>Active</h2>
+                    <p id="live-headcount">0</p>
+                </div>
+                <div class="card">
+                    <h2>Resigned</h2>
+                    <p id="total-checkin">134</p>
+                </div>
+                <div class="card">
+                    <h2>Absended</h2>
+                    <p id="total-checkout">36</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-grid">
+            <div class="status-card">
+                <h2>Gender Distribution</h2>
+                <p id="present-count">12</p>
+            </div>
+            <div class="status-card">
+                <h2>Female</h2>
+                <p id="absent-count">20</p>
+            </div>
+            <div class="status-card">
+                <h2>Others</h2>
+                <p id="late-arrival">0</p>
+            </div>
+            <div class="status-card">
+                <h2>Male</h2>
+                <p id="early-leave">0</p>
+            </div>
+            <!-- <div class="status-card">
+                <h2>Missed Punch</h2>
+                <p id="missed-punch">0</p>
+            </div> -->
+            <!-- <div class="status-card">
+                <h2>Half Day</h2>
+                <p id="half-day">0</p>
+            </div> -->
+            <!-- <div class="status-card">
+                <h2>Over Time</h2>
+                <p id="over-time">0</p>
+            </div> -->
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-card">
+                <h2>Employee Strength</h2>
+                <canvas id="employee-strength-chart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h2>EmployeeID</h2>
+                <canvas id="leave-onduty-chart"></canvas>
+            </div>
+        </div>
+
+        <div class="employee-list">
+            <h2>Employee Name</h2>
+            <div id="employee-details">
+                </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    <script src="script.js"></script>
+    <script>
+        // Sample Data (Replace with your actual data)
+const employeeStrengthData = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    datasets: [{
+        label: 'Employee Count',
+        data: [300, 350, 400, 450, 420, 500],
+        backgroundColor: 'skyblue',
+        borderColor: 'steelblue',
+        borderWidth: 1
+    }]
+};
+
+const leaveOndutyData = {
+    labels: ['EL', 'CL', 'SL', 'Medical', 'LOP', 'OD'],
+    datasets: [{
+        data: [60, 30, 20, 15, 5, 10], // Example leave data
+        backgroundColor: [
+            '#f0ad4e', '#5bc0de', '#d9534f', '#5cb85c', '#f0ad4e', '#428bca'
+        ],
+        hoverOffset: 4
+    }]
+};
+
+// Get the Canvas Elements
+const employeeStrengthCanvas = document.getElementById('employee-strength-chart');
+const leaveOndutyCanvas = document.getElementById('leave-onduty-chart');
+
+// Create the Charts using Chart.js
+new Chart(employeeStrengthCanvas, {
+    type: 'bar',
+    data: employeeStrengthData,
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+new Chart(leaveOndutyCanvas, {
+    type: 'doughnut',  // Or 'pie'
+    data: leaveOndutyData,
+    options: {
+       responsive: true,
+       maintainAspectRatio: false, // Important for responsive sizing
+       plugins: {
+           legend: {
+               display: true, // Show legend if needed
+               position: 'right' // Legend position
+           }
+       }
+    }
+});
+
+
+// Sample Employee Data (Replace with your actual data)
+const employees = [
+    { id: 466, name: 'Chandan Chetri', leave: '4.990.00' },
+    { id: 115, name: 'Panchangam Naveen Kumar', leave: '60' },
+    { id: 1, name: 'Anil Kumar G', leave: 'N/A' }
+];
+
+const employeeDetailsDiv = document.getElementById('employee-details');
+
+employees.forEach(employee => {
+    const employeeDiv = document.createElement('div');
+    employeeDiv.innerHTML = `
+        <h3>${employee.name}</h3>
+        <p>Emp Id: ${employee.id}</p>
+        <p>Leave: ${employee.leave}</p>
+    `;
+    employeeDetailsDiv.appendChild(employeeDiv);
+});
+
+// Update data functions (you'll need to implement these based on your data source)
+function updateLiveHeadcount(count) {
+    document.getElementById('live-head')
+}
+    </script>
+</body>
+</html>

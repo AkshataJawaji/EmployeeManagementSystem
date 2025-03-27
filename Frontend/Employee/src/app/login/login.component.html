@@ -1,0 +1,92 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head> 
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+     <title>Sign In Page</title>
+    <link rel="stylesheet" href="login.component.css">
+</head> 
+
+<body> 
+    <div class="container">
+        <div class="card">
+            <div class="logo">
+                <h1><span class="digital">digital</span>-<span class="i">i</span></h1>
+                <p class="subtext">Digital Workflow Management</p>
+            </div>
+
+
+            <div class="form-section">
+
+                <img src="https://media.licdn.com/dms/image/v2/C560BAQHi0s_AgvO3Dw/company-logo_200_200/company-logo_200_200/0/1670627183752/geniustech_inc_logo?e=2147483647&v=beta&t=Ks1SOFlAlkEtC-N__0GHkjmmgvr-wcZbfS7OJ6SfFQg"
+                    alt="Digital-i Logo">
+                <h2>Welcome, Sign In</h2>
+                <p class="signin-text">Sign in to continue</p>
+                <form [formGroup]="loginForm">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Username" formControlName="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Password" formControlName="password" required>
+                    </div>
+                    <button type="submit" class="signin-btn" (click)="submit()">Sign In</button>
+                </form>
+                <p class="signup-text">
+                    Don't have an account? <a href="#">Sign Up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+ </body>
+
+</html>  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+     <title>Sign In Page</title>
+    <!-- <link rel="stylesheet" href="login.component.css"> -->
+    <link rel="stylesheet" href="./login.component.css">
+
+</head> 
+<body>
+
+
+
+<div class="container">
+    <div class="card">
+        <div class="logo">
+            <h1><span class="digital">digital</span>-<span class="i">i</span></h1>
+            <p class="subtext">Digital Workflow Management</p>
+        </div>
+
+        <div class="form-section">
+            <img src="https://media.licdn.com/dms/image/v2/C560BAQHi0s_AgvO3Dw/company-logo_200_200/company-logo_200_200/0/1670627183752/geniustech_inc_logo?e=2147483647&v=beta&t=Ks1SOFlAlkEtC-N__0GHkjmmgvr-wcZbfS7OJ6SfFQg"
+                alt="Digital-i Logo">
+            <h2>Welcome, Sign In</h2>
+            <p class="signin-text">Sign in to continue</p>
+            <form [formGroup]="loginForm">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Username" formControlName="username" required autocomplete="username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password" formControlName="password" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="signin-btn" (click)="submit()">Sign In</button>
+            </form>
+            <p class="signup-text">
+                Don't have an account? <a href="#">Sign Up</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>

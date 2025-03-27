@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ADMIN</title>
+  <link rel="stylesheet" href="./dashboard.component.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <header class="dashboard-header">
+      <!-- <img src="https://logowik.com/content/uploads/images/ge-healthcare7730.logowik.com.webp"> -->
+      <!-- <div class="bar">
+        <i class="fa-solid fa-bars"></i><h1>ADMIN</h1>
+      </div> -->
+      <div>
+        <h1>🄼🄰🄶🄽🅄🄼</h1>
+      </div>
+      <h1>DASHBOARD</h1>
+      <div class="up">
+        <i class="fa-solid fa-up-right-from-square"></i>
+      </div>
+      <div class="user">
+        <i class="fa-solid fa-user-large"></i>
+      </div>
+      <div class="down">
+        <i class="fa-regular fa-share-from-square"></i>
+      </div>
+    </header>
+    <aside class="sidebar">
+      <ul>
+        <li>👤Welcome, admin</li>
+           <span> 
+            <li>⏰MAIN NAVIGATION</li>
+           </span>
+       
+       <li><i class="fa-solid fa-angle-down"></i>
+        👥</li>
+          <li></li>
+          <li>Departments</li>
+           <li><i class="fa-solid fa-chevron-right"></i> 🍽Tasks</li>
+          <li> <i class="fa-solid fa-chevron-right"></i> 💬Evaluation</li>
+       <li><i class="fa-solid fa-chevron-right"></i> 📄Designation</li>
+       <li><i class="fa-solid fa-chevron-right"></i> ⚙Evaluator</li>
+       <li> <a [routerLink]="['employeeDetails']" routerLinkActive="active">
+        <i class="fa-solid fa-chevron-right"></i> ⚙Employees </a>
+      </li>
+      </ul>
+    </aside>
+    <main class="dashboard-main">
+      <div class="card" style="background-color: rgb(57, 57, 202);">
+        <h3>Total Departments</h3>
+        <p>{{totalEmployees}}</p>
+        <span class="icon">🧑‍🤝‍🧑</span>
+      </div>
+      <div class="card" style="background-color: rgb(75, 111, 75);">
+        <h3>Total Designation</h3>
+        <p>{{maleCount}}</p>
+        <span class="icon">♂</span>
+      </div>
+      <div class="card" style="background-color: rgb(201, 211, 104);">
+        <h3>Total Lists</h3>
+        <p>{{femaleCount}}</p>
+        <span class="icon">♀</span>
+      </div>
+      <div class="card" style="background-color: rgb(181, 114, 152);">
+        <h3>Total Employees</h3>
+        <p>{{totalDepartments}}</p>
+        <span class="icon">🏢</span>
+      </div>
+      <div class="card" style="background-color: rgb(98, 83, 96);">
+        <h3>Total Evaluator</h3>
+        <p>3</p>
+        <span class="icon">📍</span>
+      </div>
+      <div class="card" style="background-color: rgb(87, 90, 231);">
+        <h3>Total Tasks</h3>
+        <p>3</p>
+        <span class="icon">📍</span>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+      
+         
+   

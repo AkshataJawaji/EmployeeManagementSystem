@@ -1,0 +1,79 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Prevents chart overflow */
+}
+
+.header {
+    background-color: #007bff; /* Example header color */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.summary-cards {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.card {
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+.status-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.charts-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows charts to wrap on smaller screens */
+    gap: 20px;
+    padding: 20px;
+}
+
+.chart-card {
+    flex: 1 1 45%; /* Each chart takes about half the width */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+canvas {
+    width: 100%; /* Make charts responsive */
+    height: 300px; /* Adjust as needed */
+}
+
+.employee-list {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
